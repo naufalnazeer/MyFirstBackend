@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 
 const Event = require('./models/event')
 const User = require('./models/user')
+const port = process.env.PORT || 8000;
 
 const user =(userId)=>{
     return User.findById(userId).then(user =>{
@@ -154,7 +155,7 @@ const event =(eventIds)=>{
 
     mongoose.connect(`mongodb+srv://naufalnaz:${process.env.MONGO_PASSWORD}@cluster0.18aa0cx.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`)
     .then(()=>{
-        app.listen(process.env.PORT || 5000, () => {
+        app.listen(port, () => {
             console.log("SERVER RUNNING ON 5000");
         });
     }).catch((err)=>{
