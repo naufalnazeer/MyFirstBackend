@@ -6,8 +6,8 @@ const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 
 
-const Event = require('./models/event')
-const User = require('./models/user')
+const Event = require('./src/models/event')
+const User = require('./src/models/user')
 const port = process.env.PORT || 8000;
 
 const user =(userId)=>{

@@ -1,1 +1,1 @@
-web: nodeman ./src/index.js
+web: node index.js
