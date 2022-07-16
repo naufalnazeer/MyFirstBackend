@@ -154,8 +154,8 @@ const event =(eventIds)=>{
 
     mongoose.connect(`mongodb+srv://naufalnaz:${process.env.MONGO_PASSWORD}@cluster0.18aa0cx.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`)
     .then(()=>{
-        app.listen(3001, () => {
-            console.log("SERVER RUNNING ON 3001");
+        app.listen(process.env.PORT || 5000, () => {
+            console.log("SERVER RUNNING ON 5000");
         });
     }).catch((err)=>{
         console.log("Error occured");
