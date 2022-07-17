@@ -1,1 +1,1 @@
-web: npm start
+woker: npm start
