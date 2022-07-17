@@ -11,15 +11,15 @@ const isAuth = require('./middlewire/is-auth')
 
     const app = express();
 
-    app.use((req,res,next)=>{
-        res.setHeader('Access control-Allow-orgin','*');
-        res.setHeader('Access-control-allow-method','POST,GET,OPTIONS');
-        res.setHeader('Access-control-allow-HEADERS','Content-type,Authorization');
-        if(req.method === 'OPTIONS'){
-            return res.sendStatus(200)
-        }
-        next()
-    })
+    // app.use((req,res,next)=>{
+    //     res.setHeader('Access control-Allow-orgin','*');
+    //     res.setHeader('Access-control-allow-method','POST,GET,OPTIONS');
+    //     res.setHeader('Access-control-allow-HEADERS','Content-type,Authorization');
+    //     if(req.method === 'OPTIONS'){
+    //         return res.sendStatus(200)
+    //     }
+    //     next()
+    // })
 
     app.use(isAuth);
     app.use(bodyParser.json());
