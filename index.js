@@ -8,7 +8,6 @@ const mongoose = require('mongoose');
 
 const Event = require('./src/models/event')
 const User = require('./src/models/user')
-const port = process.env.PORT || 8000;
 
 const user =(userId)=>{
     return User.findById(userId).then(user =>{
@@ -153,13 +152,15 @@ const event =(eventIds)=>{
         res.send('WELOCME TO THE BACKEND');
     });
 
-    mongoose.connect(`mongodb+srv://naufalnaz:${process.env.MONGO_PASSWORD}@cluster0.18aa0cx.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`)
-    .then(()=>{
-        app.listen(port, () => {
-            console.log("SERVER RUNNING ON 5000");
-        });
-    }).catch((err)=>{
-        console.log("Error occured");
-    })
-
+    // mongoose.connect(`mongodb+srv://naufalnaz:${process.env.MONGO_PASSWORD}@cluster0.18aa0cx.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`)
+    // .then(()=>{
+    //     app.listen(process.env.PORT, () => {
+    //         console.log("SERVER RUNNING ON 3000");
+    //     });
+    // }).catch((err)=>{
+    //     console.log("Error occured");
+    // })
+    app.listen(process.env.PORT, () => {
+        console.log(`Example app listening on port ${process.env.PORT}`)
+      })
    
