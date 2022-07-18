@@ -32,8 +32,8 @@ const isAuth = require('./middlewire/is-auth')
     app.get('/', (req, res, next) => {
         res.send('WELOCME TO THE BACKEND');
     });
-
-    mongoose.connect(`mongodb+srv://naufalnaz:${process.env.MONGO_PASSWORD}@cluster0.18aa0cx.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`)
+    console.log(process.env.MONGO_DB)
+    mongoose.connect(process.env.MONGO_DB)
     .then(()=>{
         app.listen(process.env.PORT || 3000, () => {
             console.log("SERVER RUNNING ON 3000");
