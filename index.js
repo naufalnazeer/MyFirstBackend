@@ -35,6 +35,7 @@ const isAuth = require('./middlewire/is-auth')
     console.log(process.env.MONGO_DB)
     mongoose.connect(process.env.MONGO_DB)
     .then(()=>{
+        console.log("MongoDB connected")
         app.listen(process.env.PORT || 3000, () => {
             console.log("SERVER RUNNING ON 3000");
         });
